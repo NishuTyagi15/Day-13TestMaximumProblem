@@ -1,10 +1,10 @@
 public class TestMaximum {
-    Integer X,Y,Z;
+    Float X,Y,Z;
 
 
 	
 
-	public TestMaximum(Integer X, Integer Y, Integer Z) {
+	public TestMaximum(Float X, Float Y, Float Z) {
 		
 		this.X = X;
 		this.Y = Y;
@@ -12,15 +12,15 @@ public class TestMaximum {
 	}
 
 
-	public int maximum() {
+	public float maximum() {
 	
 		return TestMaximum.maximum(X, Y, Z); 
 	}
 
 	
 	// determines the largest integer from 3 Integers
-	public static int maximum(Integer X, Integer Y, Integer Z) { 
-		Integer max = X; // assume initially X is the largest integer
+	public static float maximum(Float X, Float Y, Float Z) { 
+		Float max = X; // assume initially X is the largest integer
 	
 
 		if(Y.compareTo(max) > 0) { 
@@ -38,20 +38,20 @@ public class TestMaximum {
 	}
 
 	
-	public static  void printMax(Integer X, Integer Y, Integer Z, Integer max) {
+	public static  void printMax(Float X, Float Y, Float Z, Float max) {
 		System.out.printf("Maximum Integer From %s, %s and %s is %s\n",X, Y, Z, max);
 	}
 
 	public static void main(String args[]) {
 
-		Integer XInt=10, YInt = 5, ZInt = 6;
+		Float Xfloat=12.2f, Yfloat = 10.6f, Zfloat = 9.1f;
 	
 		
 		// MaximumTest.testMaximum(xInt, yInt , zInt); 
 		
-		new TestMaximum(XInt, YInt, ZInt).maximum(); // for TC 1.1
-		new TestMaximum(YInt, XInt, ZInt).maximum(); // for TC 1.2
-		new TestMaximum(ZInt, YInt, XInt).maximum(); // for TC 1.3
+		new TestMaximum(Xfloat, Yfloat, Zfloat).maximum(); // for TC 1.1
+		new TestMaximum(Yfloat, Xfloat, Zfloat).maximum(); // for TC 1.2
+		new TestMaximum(Zfloat, Yfloat, Xfloat).maximum(); // for TC 1.3
 		
 		
 	}
