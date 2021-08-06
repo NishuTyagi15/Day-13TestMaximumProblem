@@ -1,9 +1,6 @@
 public class TestMaximum {
     Float X,Y,Z;
 
-
-	
-
 	public TestMaximum(Float X, Float Y, Float Z) {
 		
 		this.X = X;
@@ -11,18 +8,15 @@ public class TestMaximum {
 		this.Z = Z;
 	}
 
-
 	public float maximum() {
 	
 		return TestMaximum.maximum(X, Y, Z); 
 	}
 
-	
 	// determines the largest integer from 3 Integers
 	public static float maximum(Float X, Float Y, Float Z) { 
 		Float max = X; // assume initially X is the largest integer
 	
-
 		if(Y.compareTo(max) > 0) { 
 			max = Y; //y is the largest integer so far
 		}
@@ -37,7 +31,6 @@ public class TestMaximum {
 		return max; // returns the largest object
 	}
 
-	
 	public static  void printMax(Float X, Float Y, Float Z, Float max) {
 		System.out.printf("Maximum Integer From %s, %s and %s is %s\n",X, Y, Z, max);
 	}
@@ -52,7 +45,6 @@ public class TestMaximum {
 		new TestMaximum(Xfloat, Yfloat, Zfloat).maximum(); // for TC 1.1
 		new TestMaximum(Yfloat, Xfloat, Zfloat).maximum(); // for TC 1.2
 		new TestMaximum(Zfloat, Yfloat, Xfloat).maximum(); // for TC 1.3
-		
-		
+			
 	}
 }
