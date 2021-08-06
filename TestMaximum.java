@@ -33,7 +33,7 @@ public class TestMaximum {
 	}
 
 	public static void main(String args[]) {
-		String XStr = "28", YStr = "42", ZStr = "36";
+		String XStr = "Parrot", YStr = "Rabbit", ZStr = "Lion";
 		
 		new TestMaximum(XStr, YStr, ZStr).maximum(); // for TC 1.1
 		new TestMaximum(YStr, ZStr, XStr).maximum(); // for TC 1.2
