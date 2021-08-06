@@ -52,14 +52,58 @@ public class TestMaximum <N extends Comparable<N>> {
 
 	public static void main(String args[]) {
 
-		Integer XInt = 6 , YInt = 8, ZInt = 3;
-		Float  XFloat = 6.9f , YFloat = 7.2f, ZFloat = 9.1f;
-		String XStr = "Parrot", YStr = "Rabbit", ZStr = "Lion"; 
+		Integer [] arr = {1, 2, 3, 4, 5, 245, 888, 963, 1024, 99, 100, 360};
+		int n = arr.length;
+		int swap;
+
+		Integer max = Integer.MIN_VALUE;
+
+		for (int i = 0; i < arr.length; i = i+3) {
+			for (int j = i; j < arr.length-1; j++) {
+
+				Integer value1 = arr[i];
+				Integer value2;
+				Integer value3;
+
+				if (arr[j].compareTo(arr[j+1]) < 0) {
+					swap = arr[j];
+					arr[j] = arr[j+1];
+					arr[j+1] = swap;
+				}
+            	if (n < n-1) {
+					value2 = arr[i + 1];
+				}
+				else {
+					value2 = Integer.MIN_VALUE;
+
+				}
+				if (n < n-2) {
+					value3 = arr[i + 2];
+				}
+				else {
+					value3 = Integer.MIN_VALUE;
+
+				}
+                // obj.maxMethod(value1, value2, value3);
+            
+            	Integer res = new TestMaximum<Integer>(value1, value2, value3).Maximum();
+
+				if (res > max) {
+					res = max;
+					System.out.println(max);
+				}
+        	}
+		}
+
+		/*
+		*Integer XInt = 6 , YInt = 8, ZInt = 3;
+		*Float  XFloat = 6.9f , YFloat = 7.2f, ZFloat = 9.1f;
+		*String XStr = "Parrot", YStr = "Rabbit", ZStr = "Lion"; 
 		
-	    TestMaximum.testMaximum(XStr, YStr, ZStr);
-		TestMaximum.maximum(XInt, YInt, ZInt);
-		TestMaximum.maximum(XFloat, YFloat, ZFloat);
-		TestMaximum.maximum(XStr, YStr, ZStr);
-		
+	    *TestMaximum.testMaximum(XStr, YStr, ZStr);
+		*TestMaximum.maximum(XInt, YInt, ZInt);
+		*TestMaximum.maximum(XFloat, YFloat, ZFloat);
+		*TestMaximum.maximum(XStr, YStr, ZStr);
+		*/
 	}
 }
