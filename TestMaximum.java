@@ -1,28 +1,20 @@
-public class TestMaximum {
-    String X,Y,Z;
+public class TestMaximum <N extends Comparable<N>> {
+	N X, Y, Z;
 
-
-	
-
-	public TestMaximum(String X, String Y, String Z) {
-		
+	public TestMaximum(N X, N Y, N Z) {
 		this.X = X;
 		this.Y = Y;
 		this.Z = Z;
 	}
 
-
-	public String maximum() {
-	
-		return TestMaximum.maximum(X, Y, Z); 
+	public N Maximum () {
+		return TestMaximum.maximum(X, Y, Z);
 	}
 
+	// determines the largest integer from 3 Integres, Floats & Strings
+	public static <N extends Comparable<N>> N maximum(N X, N Y, N Z) { 
+		N max = X; // assume initially X is the largest integer
 	
-	// determines the largest integer from 3 Integers
-	public static String maximum(String X, String Y, String Z) { 
-		String max = X; // assume initially X is the largest integer
-	
-
 		if(Y.compareTo(max) > 0) { 
 			max = Y; //y is the largest integer so far
 		}
@@ -33,26 +25,22 @@ public class TestMaximum {
 		}
 		
 		printMax(X, Y, Z, max);
-		
 		return max; // returns the largest object
 	}
 
-	
-	public static  void printMax(String X, String Y, String Z, String max) {
+	public static <N extends Comparable> void printMax(N X, N Y, N Z, N max) {
 		System.out.printf("Maximum Integer From %s, %s and %s is %s\n",X, Y, Z, max);
 	}
 
 	public static void main(String args[]) {
 
-		String XStr = "28", YStr = "42", ZStr = "36";
-	
+		Integer XInt = 6 , YInt = 8, ZInt = 3;
+		Float  XFloat = 6.9f , YFloat = 7.2f, ZFloat = 9.1f;
+		String XStr = "Parrot", YStr = "Rabbit", ZStr = "Lion"; 
 		
-		// MaximumTest.testMaximum(xInt, yInt , zInt); 
-		
-		new TestMaximum(XStr, YStr, ZStr).maximum(); // for TC 1.1
-		new TestMaximum(YStr, XStr, ZStr).maximum(); // for TC 1.2
-		new TestMaximum(ZStr, YStr, XStr).maximum(); // for TC 1.3
-		
+		TestMaximum.maximum(XInt, YInt, ZInt);
+		TestMaximum.maximum(XFloat, YFloat, ZFloat);
+		TestMaximum.maximum(XStr, YStr, ZStr);
 		
 	}
 }
