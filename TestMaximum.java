@@ -1,19 +1,17 @@
 public class TestMaximum {
 	String X, Y, Z;
 
-	public TestMaximum(String X, String Y, String Z) {
-		
+	public TestMaximum(String X, String Y, String Z) {	
 		this.X = X;
 		this.Y = Y;
 		this.Z = Z;
 	}
 
 	public String maximum() {
-	
 		return TestMaximum.maximum(X, Y, Z); 
 	}
 
-	// determines the largest integer from 3 Integers
+	// determines the largest integer from 3 Strings
 	public static String maximum(String X, String Y, String Z) { 
 		String max = X; // assume initially X is the largest integer
 	
@@ -27,7 +25,6 @@ public class TestMaximum {
 		}
 		
 		printMax(X, Y, Z, max);
-		
 		return max; // returns the largest object
 	}
 
@@ -36,15 +33,11 @@ public class TestMaximum {
 	}
 
 	public static void main(String args[]) {
-
 		String XStr = "28", YStr = "42", ZStr = "36";
-	
-		
-		// MaximumTest.testMaximum(xInt, yInt , zInt); 
 		
 		new TestMaximum(XStr, YStr, ZStr).maximum(); // for TC 1.1
-		new TestMaximum(YStr, XStr, ZStr).maximum(); // for TC 1.2
-		new TestMaximum(ZStr, YStr, XStr).maximum(); // for TC 1.3
+		new TestMaximum(YStr, ZStr, XStr).maximum(); // for TC 1.2
+		new TestMaximum(ZStr, XStr, YStr).maximum(); // for TC 1.3
 		
 	}
 }
