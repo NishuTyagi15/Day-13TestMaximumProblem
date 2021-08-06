@@ -1,8 +1,5 @@
 public class TestMaximum {
-    String X,Y,Z;
-
-
-	
+	String X, Y, Z;
 
 	public TestMaximum(String X, String Y, String Z) {
 		
@@ -11,18 +8,15 @@ public class TestMaximum {
 		this.Z = Z;
 	}
 
-
 	public String maximum() {
 	
 		return TestMaximum.maximum(X, Y, Z); 
 	}
 
-	
 	// determines the largest integer from 3 Integers
 	public static String maximum(String X, String Y, String Z) { 
 		String max = X; // assume initially X is the largest integer
 	
-
 		if(Y.compareTo(max) > 0) { 
 			max = Y; //y is the largest integer so far
 		}
@@ -37,7 +31,6 @@ public class TestMaximum {
 		return max; // returns the largest object
 	}
 
-	
 	public static  void printMax(String X, String Y, String Z, String max) {
 		System.out.printf("Maximum Integer From %s, %s and %s is %s\n",X, Y, Z, max);
 	}
@@ -52,7 +45,6 @@ public class TestMaximum {
 		new TestMaximum(XStr, YStr, ZStr).maximum(); // for TC 1.1
 		new TestMaximum(YStr, XStr, ZStr).maximum(); // for TC 1.2
 		new TestMaximum(ZStr, YStr, XStr).maximum(); // for TC 1.3
-		
 		
 	}
 }
